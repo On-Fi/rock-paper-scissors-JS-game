@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let snakeY = 0;
     let foodX = 0;
     let foodY = 0;
-    let snakeSpeed = 5;
+    let snakeSpeed = 2;
     let direction = 'right';
+    let snakeBody = [];
 
     function update() {
         // Update snake position
@@ -27,11 +28,25 @@ document.addEventListener('DOMContentLoaded', function () {
         if (checkCollision(snake, food)) {
             // Move food to a new random position
             placeFood();
+
+            // Add a new segment to the snake's body
+            const newSegment = document.createElement('div');
+            newSegment.classList.add('snake-segment');
+            gameContainer.appendChild(newSegment);
+            snakeBody.push(newSegment);
         }
 
-        // Update snake position on the screen
-        snake.style.left = `${snakeX}px`;
-        snake.style.top = `${snakeY}px`;
+        // Move the snake's body
+        for (let i = snakeBody.length - 1; i > 0; i--) {
+            const prevX = snakeBody[i - 1].style.left;
+            const prevY = snakeBody[i - 1].style.top;
+            snakeBody[i].style.left = prevX;
+            snakeBody[i].style.top = prevY;
+        }
+
+        // Update the head of the snake
+        snakeBody[0].style.left = `${snakeX}px`;
+        snakeBody[0].style.top = `${snakeY}px`;
 
         // Repeat the update function
         requestAnimationFrame(update);
@@ -58,11 +73,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function resetGame() {
-        // Reset snake position
+        // Reset snake position and body
         snakeX = 0;
         snakeY = 0;
         snake.style.left = '0';
         snake.style.top = '0';
+
+        // Remove snake body segments
+        snakeBody.forEach(segment => segment.remove());
+        snakeBody = [];
 
         // Reset food position
         placeFood();
