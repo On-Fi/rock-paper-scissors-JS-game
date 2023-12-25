@@ -47,9 +47,11 @@ h1 {
 
 button {
     padding: 10px;
-    font-size: 40px;
+    font-size: 60px;
     margin: 0 5px;
     cursor: pointer;
+border: none;
+background: none;
 }
 
 button:hover {
