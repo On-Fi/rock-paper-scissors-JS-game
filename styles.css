@@ -8,6 +8,10 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+h1 {
+    font-size: 50px;
+}
+
 .container {
     text-align: center;
 }
@@ -23,16 +27,17 @@ body {
 }
 
 .choice h2 {
-    font-size: 18px;
+    font-size: 30px;
     margin-bottom: 5px;
 }
 
 #result {
+    font-size: 20px;
     flex: 1;
 }
 
 #result-text {
-    font-size: 18px;
+    font-size: 36px;
     font-weight: bold;
 }
 
@@ -42,7 +47,7 @@ body {
 
 button {
     padding: 10px;
-    font-size: 16px;
+    font-size: 40px;
     margin: 0 5px;
     cursor: pointer;
 }
