@@ -36,7 +36,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function displayResult(result) {
+        const resultText = document.getElementById('result-text');
         resultText.textContent = result;
+    
+        // Remove previous result classes
+        resultText.classList.remove('win', 'loss', 'tie');
+    
+        // Add the appropriate class based on the result
+        if (result === "You win!") {
+            resultText.classList.add('win');
+        } else if (result === "Computer wins!") {
+            resultText.classList.add('loss');
+        } else if (result === "It's a tie!") {
+            resultText.classList.add('tie');
+        }
     }
 
     // Attach the makeChoice function to each button click
