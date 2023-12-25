@@ -7,7 +7,8 @@ this is made out of: <br>
 - CSS  
 - Vanilla JS
 ---
-The cool thing is that the game auto restarts if the game ends in a tie.
+The cool thing is that the game is fair because the choice of the computer is random,
+and if you hover over your choices there is a nice colorchanging effect.
 ---
 have fun! :)
 
