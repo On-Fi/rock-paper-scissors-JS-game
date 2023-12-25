@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function generateComputerChoice() {
-        const choices = ['🪨', '🖐', '✌'];
+        const choices = ['🪨', '📄', '✌'];
         const randomIndex = Math.floor(Math.random() * choices.length);
         return choices[randomIndex];
     }
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
             return 'It\'s a tie!';
         } else if (
             (userChoice === '🪨' && computerChoice === '✌') ||
-            (userChoice === '🖐' && computerChoice === '🪨') ||
-            (userChoice === '✌' && computerChoice === '🖐')
+            (userChoice === '📄' && computerChoice === '🪨') ||
+            (userChoice === '✌' && computerChoice === '📄')
         ) {
             return 'You win!';
         } else {
