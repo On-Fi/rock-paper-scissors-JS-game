@@ -11,7 +11,14 @@ body {
 
 h1 {
     font-size: 50px;
+    cursor: default;
 }
+
+h2 {
+    color:#bf1414;
+    cursor: default;
+}
+
 
 .container {
     text-align: center;
@@ -26,27 +33,44 @@ h1 {
 .choice {
     width: 150px;
     font-size: 60px;
+    cursor: default;
 }
 
 .choice h2 {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 5px;
+    color: black;
 }
 
 #result {
     font-size: 21px;
     flex: 1;
+    cursor: default;
 }
 
 #result-text {
-    font-size: 36px;
-    margin-top: 100px;
+    font-size: 50px;
+    margin-top: 120px;
+    margin-bottom: -20px;
+    cursor: default;
     font-weight: bold;
 }
 
+#result-text.win {
+    color: #08b808; /* Green color for 'You win!' */
+}
+
+#result-text.loss {
+    color: #bf1414; /* Red color for 'Computer wins!' */
+}
+
+#result-text.tie {
+    color: #575656; /* Dark grey color for 'It's a tie!' */
+}
+
 #choices {
-    margin-top: 0px;
+    margin-top: 20px;
 }
 
 button {
@@ -55,10 +79,10 @@ button {
     margin: 0 5px;
     margin-top: 20px;
     cursor: pointer;
-border: none;
-background: none;
+    border: none;
+    background: none;
 }
 
 button:hover {
-    background-color: hsl(127, 89%, 57%);
+    background-color: #575656;
 }
